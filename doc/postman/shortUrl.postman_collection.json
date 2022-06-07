@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "5bb75faf-ae76-43ba-b4b8-a49988a5ab20",
+		"name": "shortUrl",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14879286"
+	},
+	"item": [
+		{
+			"name": "1.make short url",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"longUrl\":\"https://www.section.io/engineering-education/nodejs-url-shortener/\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/url/shorten",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"url",
+						"shorten"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "1.update short url",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"longUrl\":\"https://www.section.io/engineering-education/nodejs-url-shortener/\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/url/shorten",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"url",
+						"shorten"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -4,7 +4,7 @@ const router = express.Router();
 
 const validUrl = require("valid-url");
 const shortid = require("shortid");
-
+const englishUppercase = require("nanoid-generate/uppercase");
 const Url = require("../models/Url");
 var QRCode = require("qrcode");
 
@@ -19,7 +19,8 @@ router.post("/shorten", async (req, res) => {
     return res.status(401).json("Invalid base URL");
   }
   // create url code
-  const urlCode = shortid.generate();
+  // const urlCode = shortid.generate();
+  const urlCode = englishUppercase(4);
   //check long url
   if (validUrl.isUri(longUrl)) {
     try {
@@ -31,7 +32,7 @@ router.post("/shorten", async (req, res) => {
         // generate the qr code here
         const opts = {
           errorCorrectionLevel: "H",
-          type: "terminal",
+          type: "svg",
           quality: 0.95,
           margin: 1,
           color: {
@@ -48,7 +49,7 @@ router.post("/shorten", async (req, res) => {
           qrUrl,
           date: new Date(),
         });
-        
+
         await url.save();
         res.json(url);
       }
